@@ -1,23 +1,11 @@
 # Data-Import-interpolate-extrapolate
 
-#1a
-import numpy as np
-import matplotlib.pyplot as plt 
+The ﬁle ”co2 mm mlo.txt” contains data on the CO2 content in the atmosphere as measured at the Mauna Loa Observatory. It has a signiﬁcantly long header describing the data and then delimited values after. You will have to inspect the ﬁle to see the line number for which the header ends and data begins using an editor or other tool.
 
-info = np.loadtxt(fname='co2_mm_mlo.txt')
+1a: Write a script to read the data into a single numpy array and use the array indexing of python to plot the decimal date vs. average for the ﬁrst 60 months. Comment on the shape of the data and any anomalies you see. 
 
-#print(info[0])
-#I am calling the first 60 values listed in columns 1 and 2 in order to plot them 
-#against each other.
-decDate=np.copy(info[:60,2])
-avgCO2=np.copy(info[:60,3])
+1b: Investigate the use of the pyplot saveﬁg command to save a hardcopy of the plot in 1a, and create a plot ﬁle in jpg format. Learn about and use the plt.ylim function to restrict the plotted range of the y-axis to enhance the view of the data oscillations. Include the plot ﬁle in your submission 
 
-plt.scatter(decDate,avgCO2)
-plt.ylim(310,330)
-plt.xlabel('Date')
-plt.ylabel('Avg CO2')
-plt.title('CO2 Level')
-plt.show()
+1c: Use a for loop or direct vectorized equations to plot the diﬀerence between the interpolated data and the seasonally corrected trend. Save a hardcopy and include in your submission. 
 
-#The data points appear as a wave that tends to increase over time.
-#see
+1d: With the instructor explore and use the numpy savetxt function to write a ﬁle containing only the decimal date and trend columns. Write all values to keep only 3 decimal places using the ”fmt” parameter. 
